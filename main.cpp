@@ -5,10 +5,7 @@
 
 /*
 MISSING FUNCTION:
-* compiler für c++ auf standartpath /home/USER/CODE/tmp
-* standart ausführung für c++ code
-* stadart ausfürung für python 
-
+ 
 
 */
 using namespace std;

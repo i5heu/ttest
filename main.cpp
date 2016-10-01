@@ -72,8 +72,7 @@ int main()
 	}
 	
 	cout << "\033[95m\n\nBenchmark fuer:\n"<< tmpp << "\n\n"; //dont ask me about the BBenchmark think ... ITS WORKING
-	cout << "\nXXXXX Program Startet XXXXX\n";
-	cout << "\033[0m\033[93m\n";
+	cout << "\nXXXXX Program Startet XXXXX\033[0m\n ";
 	
     
     
@@ -87,7 +86,7 @@ int main()
 	
     auto duration = duration_cast<microseconds>( t2 - t1 ).count();
 	
-	cout << "\033[0m\033[95m\nXXXXX Program  FERTIG XXXXX";
+	cout << "\033[95m\nXXXXX Program  FERTIG XXXXX";
     cout << "\n" << duration << " Microsekudnen\n"; 
     cout << (duration/1000) << " Milisekunden\n" ;
     cout << (duration/1000000) << " Sekunden\n\033[0m" ;

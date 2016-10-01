@@ -5,7 +5,8 @@
 
 /*
 MISSING FUNCTION:
- 
+
+
 
 */
 using namespace std;
@@ -38,7 +39,7 @@ string choice(string tmp){
 		pre = "python /home/USER/CODE/tmp/main.py ";
 	}
 	else if(tmp == "8"){
-		pre = "g++ -std=c++14 '/home/USER/CODE/tmp/main.cpp' -o '/home/marvin/CODE/tmp/main'";
+		pre = "g++ -std=c++14 '/home/USER/CODE/tmp/main.cpp' -o '/home/USER/CODE/tmp/main'";
 	}
 	else{
 		cout << "\nFAIL\n";
@@ -51,7 +52,7 @@ string choice(string tmp){
 int main()
 {	string userinput;
 	
-	cout << "\033[95m[1]Normal Input [2]python [3]python3 [4]sh [5]grep [6]CODE/tmp C++ [7]CODE/tmp python [8]CODE/tmp C++ compile\n>>\033[0m";
+	cout << "\033[95m[1]if command starts with a number [2]python [3]python3 [4]sh [5]grep [6]CODE/tmp C++ [7]CODE/tmp python [8]CODE/tmp C++ compile\n>>\033[0m";
 	string tmp1;
 	getline(cin,tmp1);
 	

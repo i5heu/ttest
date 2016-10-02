@@ -2,15 +2,24 @@
 #include <chrono>
 #include <stdlib.h>
 #include <string.h>
+#include <fstream>
+#include <iterator>
 
 /*
+Compile with C++14
+
 MISSING FUNCTION:
-space for last comand
+*Replace marvin with USER by compilinc and create main.cpp.pup 
 
 
 */
 using namespace std;
 using namespace std::chrono;
+
+string lastcomand; // The last comand in the File
+string lastwirte;  // Variable to wirte the lsat Comand by running
+
+
 
 string choice(string tmp){
 
@@ -49,12 +58,42 @@ string choice(string tmp){
 	return pre;
 }
 
-int main()
-{	string userinput;
+void lastcomandread(){
+	  
+      istream_iterator<char> end_of_file;
+      ifstream file("/home/marvin/lastcomand.txt");
+      string tmp (istream_iterator<char>(file>>noskipws), end_of_file) ;
+      file.close();
+      
+      lastcomand = tmp;
+      
+	//strcpy(tmpc, tmp.c_str());
+
+	}
+
+
+void lastcomandwrite(){
+	
+	if (lastwirte == ""){
+		cout << "nothing has changed" << endl;
+	}
+	else{
+		ofstream out("/home/marvin/lastcomand.txt");
+		out << lastwirte;
+		out.close();
+		}
+	}
+
+int main(){
+	lastcomandread();
+	cout << "\033[0;36mlast command >>" << lastcomand << "\033[0m " << endl;
+	
+	string userinput;
 	
 	cout << "\033[95m[1]if command starts with a number [2]python [3]python3 [4]sh [5]grep [6]CODE/tmp C++ [7]CODE/tmp python [8]CODE/tmp C++ compile\n>>\033[0m";
 	string tmp1;
 	getline(cin,tmp1);
+	
 	
 	char tmpp[800]; 
 	if ( tmp1 == "1" || tmp1 == "2" || tmp1 == "3" || tmp1 == "4" || tmp1 == "5" || tmp1 == "6" || tmp1 == "7" || tmp1 == "8" ){
@@ -66,6 +105,9 @@ int main()
 		
 		tmp += userinput;
 		strcpy(tmpp, tmp.c_str());
+	}
+	else if ( tmp1 == "" ){
+		strcpy(tmpp, lastcomand.c_str());
 	}
 	else{
 		strcpy(tmpp, tmp1.c_str());
@@ -85,6 +127,15 @@ int main()
 	
 	
     auto duration = duration_cast<microseconds>( t2 - t1 ).count();
+	
+	if ( tmp1 == "1" || tmp1 == "2" || tmp1 == "3" || tmp1 == "4" || tmp1 == "5" || tmp1 == "6" || tmp1 == "7" || tmp1 == "8" ){
+		
+		cout << "Nothing has changed";
+	}
+	else{
+		lastwirte = string(tmpp);
+		lastcomandwrite();
+	}
 	
 	cout << "\033[95m\nXXXXX Program  FERTIG XXXXX";
     cout << "\n" << duration << " Microsekudnen\n"; 

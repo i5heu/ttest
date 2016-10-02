@@ -4,12 +4,12 @@
 #include <string.h>
 #include <fstream>
 #include <iterator>
+#include <ctime>
 
 /*
 Compile with C++14
 
 MISSING FUNCTION:
-*Replace marvin with USER by compilinc and create main.cpp.pup 
 
 
 */
@@ -50,6 +50,22 @@ string choice(string tmp){
 	else if(tmp == "8"){
 		pre = "g++ -std=c++14 '/home/marvin/CODE/tmp/main.cpp' -o '/home/marvin/CODE/tmp/main'";
 	}
+	else if(tmp == "9"){
+		
+		  time_t rawtime;
+		  struct tm * timeinfo;
+		  char buffer[80];
+
+		  time (&rawtime);
+		  timeinfo = localtime(&rawtime);
+
+		  strftime(buffer,80,"%dd-%mm-%Yy-%Ih%Mm%Ss",timeinfo);
+		  string str(buffer);
+
+		string pretmp;
+		
+		pre = "tar -czf '/home/marvin/CODE/tmp-backup/tmp-backup-" + str + ".tar.gz'  '/home/marvin/CODE/tmp/'  ";
+	}
 	else{
 		cout << "\nFAIL\n";
 		exit(0);
@@ -89,8 +105,7 @@ int main(){
 	cout << "\033[0;36mlast command >>" << lastcomand << "\033[0m " << endl;
 	
 	string userinput;
-	
-	cout << "\033[95m[1]time [2]python [3]python3 [4]sh [5]grep [6]CODE/tmp C++ [7]CODE/tmp python [8]CODE/tmp C++ compile\n>>\033[0m";
+	cout << "\033[95m[1]time [2]python [3]python3 [4]sh [5]grep [6]CODE/tmp C++ [7]CODE/tmp python [8]CODE/tmp C++ compile [9]CODE/tmp Backup\n>>\033[0m";
 	string tmp1;
 	getline(cin,tmp1);
 	
@@ -109,6 +124,13 @@ int main(){
 	else if ( tmp1 == "" ){
 		strcpy(tmpp, lastcomand.c_str());
 	}
+	else if ( tmp1 == "9" ){
+		cout << "ok";
+		string tmp;
+		tmp = choice(tmp1);
+		tmp += userinput;
+		strcpy(tmpp, tmp.c_str());
+		}
 	else{
 		strcpy(tmpp, tmp1.c_str());
 	}
@@ -116,19 +138,15 @@ int main(){
 	cout << "\033[95m\n\nBenchmark fuer:\n"<< tmpp << "\n\n"; //dont ask me about the BBenchmark think ... ITS WORKING
 	cout << "\nXXXXX Program Startet XXXXX\033[0m\n ";
 	
-    
-    
-    // START CLOCK
-    high_resolution_clock::time_point t1 = high_resolution_clock::now();
-    system(tmpp);
-    high_resolution_clock::time_point t2 = high_resolution_clock::now();
-	// ENDE CLOCK
-	
-	
+		// START CLOCK
+		high_resolution_clock::time_point t1 = high_resolution_clock::now();
+		system(tmpp);
+		high_resolution_clock::time_point t2 = high_resolution_clock::now();
+		// ENDE CLOCK
 	
     auto duration = duration_cast<microseconds>( t2 - t1 ).count();
 	
-	if ( tmp1 == "1" || tmp1 == "2" || tmp1 == "3" || tmp1 == "4" || tmp1 == "5" || tmp1 == "6" || tmp1 == "7" || tmp1 == "8" ){
+	if ( tmp1 == "1" || tmp1 == "2" || tmp1 == "3" || tmp1 == "4" || tmp1 == "5" || tmp1 == "6" || tmp1 == "7" || tmp1 == "8" || tmp1 == "9"  ){
 		
 		cout << "Nothing has changed in LastComand";
 	}

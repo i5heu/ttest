@@ -27,7 +27,7 @@ string choice(string tmp){
 	
 	
 	if (tmp == "1"){
-		pre = "";
+		pre = "time -f'%Uuser %Ssystem %Eelapsed %PCPU (%Xtext+%Ddata %Mmax)k%Iinputs+%Ooutputs (%Fmajor+%Rminor)pagefaults %Wswaps' " ;
 	}
 	else if (tmp == "2"){
 		pre = "python ";
@@ -90,7 +90,7 @@ int main(){
 	
 	string userinput;
 	
-	cout << "\033[95m[1]if command starts with a number [2]python [3]python3 [4]sh [5]grep [6]CODE/tmp C++ [7]CODE/tmp python [8]CODE/tmp C++ compile\n>>\033[0m";
+	cout << "\033[95m[1]time [2]python [3]python3 [4]sh [5]grep [6]CODE/tmp C++ [7]CODE/tmp python [8]CODE/tmp C++ compile\n>>\033[0m";
 	string tmp1;
 	getline(cin,tmp1);
 	
@@ -130,7 +130,7 @@ int main(){
 	
 	if ( tmp1 == "1" || tmp1 == "2" || tmp1 == "3" || tmp1 == "4" || tmp1 == "5" || tmp1 == "6" || tmp1 == "7" || tmp1 == "8" ){
 		
-		cout << "Nothing has changed";
+		cout << "Nothing has changed in LastComand";
 	}
 	else{
 		lastwirte = string(tmpp);

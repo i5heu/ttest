@@ -5,7 +5,7 @@
 
 /*
 MISSING FUNCTION:
-
+space for last comand
 
 
 */
@@ -33,13 +33,13 @@ string choice(string tmp){
 		pre = "grep ";
 	}
 	else if(tmp == "6"){
-		pre = "/home/USER/CODE/tmp/main ";
+		pre = "/home/marvin/CODE/tmp/main ";
 	}
 	else if(tmp == "7"){
-		pre = "python /home/USER/CODE/tmp/main.py ";
+		pre = "python /home/marvin/CODE/tmp/main.py ";
 	}
 	else if(tmp == "8"){
-		pre = "g++ -std=c++14 '/home/USER/CODE/tmp/main.cpp' -o '/home/USER/CODE/tmp/main'";
+		pre = "g++ -std=c++14 '/home/marvin/CODE/tmp/main.cpp' -o '/home/marvin/CODE/tmp/main'";
 	}
 	else{
 		cout << "\nFAIL\n";

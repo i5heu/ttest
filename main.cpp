@@ -45,13 +45,13 @@ string choice(string tmp){
 		pre = "grep ";
 	}
 	else if(tmp == "6"){
-		pre = "/home/marvin/CODE/tmp/main ";
+		pre = "~/CODE/tmp/main ";
 	}
 	else if(tmp == "7"){
-		pre = "python /home/marvin/CODE/tmp/main.py ";
+		pre = "python ~/CODE/tmp/main.py ";
 	}
 	else if(tmp == "8"){
-		pre = "g++ -std=c++14 '/home/marvin/CODE/tmp/main.cpp' -o '/home/marvin/CODE/tmp/main'";
+		pre = "g++ -std=c++14 '~/CODE/tmp/main.cpp' -o '~/CODE/tmp/main'";
 	}
 	else if(tmp == "9"){
 		
@@ -67,7 +67,7 @@ string choice(string tmp){
 
 		string pretmp;
 		
-		pre = "tar -czf '/home/marvin/CODE/tmp-backup/tmp-backup-" + str + ".tar.gz'  '/home/marvin/CODE/tmp/'  ";
+		pre = "tar -czf '~/CODE/tmp-backup/tmp-backup-" + str + ".tar.gz'  '~/CODE/tmp/'  ";
 	}
 	else{
 		cout << "\nFAIL\n";
@@ -80,7 +80,7 @@ string choice(string tmp){
 void lastcomandread(){
 	  
       istream_iterator<char> end_of_file;
-      ifstream file("/home/marvin/lastcomand.txt");
+      ifstream file("~/lastcomand.txt");
       string tmp (istream_iterator<char>(file>>noskipws), end_of_file) ;
       file.close();
       
@@ -97,7 +97,7 @@ void lastcomandwrite(){
 		cout << "nothing has changed" << endl;
 	}
 	else{
-		ofstream out("/home/marvin/lastcomand.txt");
+		ofstream out("~/lastcomand.txt");
 		out << lastwirte;
 		out.close();
 		}

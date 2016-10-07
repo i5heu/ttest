@@ -8,9 +8,12 @@
 
 /*
 Compile with C++14
+> g++ -std=c++14 '/path/main.cpp' -o '/path/main'
 
-MISSING FUNCTION:
-In Project "Function" in https://github.com/i5heu/ttest/projects/1
+You can fnid missing functions in 
+Project "Function" on > https://github.com/i5heu/ttest/projects/1
+
+
 
 */
 using namespace std;

@@ -6,5 +6,5 @@ I have connect this Program with "t" in my Terminal.
 
 
 ```
-g++ -std=c++11 ttest.cpp
+g++ -std=c++11 main.cpp
 ```

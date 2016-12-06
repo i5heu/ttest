@@ -13,3 +13,7 @@ g++ -std=c++11 main.cpp
 ```
 sudo ln -s -T /PathToProgramm /usr/local/bin/NAME
 ```
+
+```
+sudo chmod +x ttest
+```
